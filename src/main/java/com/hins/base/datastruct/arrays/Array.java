@@ -62,6 +62,10 @@ public class Array<E> {
             resize(data.length * 2);
         }
 
+        for(int i = size - 1; i >= index ; i --) {
+            data[i + 1] = data[i];
+        }
+
         //存储元素
         data[index] = e;
 
@@ -137,24 +141,19 @@ public class Array<E> {
      * 从数组中删除index位置的元素，返回删除的元素
      */
     public E remove(int index){
-        if(index < 0 || index > size){
+
+        if(index < 0 || index >= size)
             throw new IllegalArgumentException("Remove failed. Index is illegal.");
-        }
 
-        E removeEle = data[index];
-        for(int i = index; i < size-1; i++){
-            data[i] = data[i+1];
-        }
-        size--;
-        //将最后一个元素设置为空
-        data[size-1] = null;
+        E ret = data[index];
+        for(int i = index + 1 ; i < size ; i ++)
+            data[i - 1] = data[i];
+        size --;
+        data[size] = null; // loitering objects != memory leak
 
-        //缩容
-        if(size == data.length / 2){
+        if(size == data.length / 4 && data.length / 2 != 0)
             resize(data.length / 2);
-        }
-
-        return removeEle;
+        return ret;
 
     }
 
@@ -180,6 +179,18 @@ public class Array<E> {
      */
     public E removeLast(){
         return remove(size - 1);
+    }
+
+    /**
+     * 交换操作
+     * @param i
+     * @param j
+     */
+    public void swap(int i,int j){
+
+        E e = data[i];
+        data[i] = data[j];
+        data[j] = e;
     }
 
 
