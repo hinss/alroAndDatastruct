@@ -81,7 +81,7 @@ public class MergeSort2 {
 
         int N = 20000;
 
-        Integer[] arr = com.hins.algorithm.SortTestHelper.generateRandomArray(N,0,N);
+        Integer[] arr = SortTestHelper.generateRandomArray(N,0,N);
         Integer[] arr2 = SortTestHelper.copyArr(arr);
 
         SortTestHelper.testSort("com.hins.algorithm.MergeSortBU",arr);
