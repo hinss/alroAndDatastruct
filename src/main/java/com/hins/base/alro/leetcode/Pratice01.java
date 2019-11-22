@@ -1,6 +1,6 @@
 package com.hins.base.alro.leetcode;
 
-import com.hins.algorithm.QuickSort;
+import com.hins.base.alro.QuickSort;
 
 /**
  * @Description: 只出现一次的数字
@@ -9,7 +9,7 @@ import com.hins.algorithm.QuickSort;
  * @Author:Wyman
  * @Date:2019
  */
-public class Test01 {
+public class Pratice01 {
 
     public static Comparable find(Comparable[] arr) throws Exception{
 
