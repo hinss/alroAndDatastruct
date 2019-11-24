@@ -7,7 +7,7 @@ package com.hins.base.alro;
  */
 public class InsertionSort {
 
-
+    private InsertionSort(){}
 
     public static void sort2(Comparable[] arr){
 

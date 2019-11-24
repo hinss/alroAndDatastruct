@@ -1,8 +1,13 @@
 package com.hins.base.alro;
 
+/**
+ * 选择排序
+ */
 public class SelectionSort {
 
-    // 我们的算法类不允许产生任何实例
+    /**
+     *  我们的算法类不允许产生任何实例
+     */
     private SelectionSort(){}
 
     public static void sort(Comparable[] arr){
@@ -11,10 +16,12 @@ public class SelectionSort {
         for( int i = 0 ; i < n ; i ++ ){
             // 寻找[i, n)区间里的最小值的索引
             int minIndex = i;
-            for( int j = i + 1 ; j < n ; j ++ )
+            for( int j = i + 1 ; j < n ; j ++ ){
                 // 使用compareTo方法比较两个Comparable对象的大小
-                if( arr[j].compareTo( arr[minIndex] ) < 0 )
+                if( arr[j].compareTo( arr[minIndex] ) < 0 ) {
                     minIndex = j;
+                }
+            }
 
             swap( arr , i , minIndex);
         }
