@@ -2,6 +2,7 @@ package com.hins.base.alro;
 
 /**
  * 选择排序
+ * 算法时间复杂度:O(n^2)
  */
 public class SelectionSort {
 

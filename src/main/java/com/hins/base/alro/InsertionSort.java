@@ -2,6 +2,7 @@ package com.hins.base.alro;
 
 /**
  * @Description: 插入排序算法Java实现
+ * 算法时间复杂度:O(n^2)
  * @Author:Wyman
  * @Date:2019/11/25
  */
