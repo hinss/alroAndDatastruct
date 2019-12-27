@@ -59,6 +59,35 @@ public class CircleLinkedList {
 
     }
 
+    /** 快慢指针方式 获取开始入环节点的下标 */
+    public boolean getIndexFromCycleByFastSlowPointer(ListNode head){
+
+        if(head == null || head.next == null){
+            return false;
+        }
+
+        //慢指针
+        ListNode slow = head;
+
+        //快指针
+        ListNode fast = head;
+
+        while(fast.next != null && fast.next.next != null){
+
+            //慢指针走一步
+            slow = slow.next;
+            //快指针走两步
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+
 
 
 
