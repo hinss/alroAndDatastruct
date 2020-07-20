@@ -75,8 +75,8 @@ public class QuickSort {
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, N);
         Integer[] arr2 = SortTestHelper.copyArr(arr);
 
-        SortTestHelper.testSort("com.hins.algorithm.QuickSort",arr2);
-        SortTestHelper.testSort("com.hins.algorithm.MergeSort2",arr);
+        SortTestHelper.testSort("com.hins.base.alro.QuickSort",arr2);
+        SortTestHelper.testSort("com.hins.base.alro.MergeSort2",arr);
 
         return ;
 
