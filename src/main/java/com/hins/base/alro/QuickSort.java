@@ -41,7 +41,7 @@ public class QuickSort {
         int j = l;
         for(int i = l+1; i <= r; i++){
 
-            if(arr[i].compareTo(v) < 0){
+            if(arr[i].compareTo(v) > 0){
                 j++;
                 swap(arr,j,i);
             }
@@ -76,7 +76,7 @@ public class QuickSort {
         Integer[] arr2 = SortTestHelper.copyArr(arr);
 
         SortTestHelper.testSort("com.hins.base.alro.QuickSort",arr2);
-        SortTestHelper.testSort("com.hins.base.alro.MergeSort2",arr);
+//        SortTestHelper.testSort("com.hins.base.alro.MergeSort2",arr);
 
         return ;
 
