@@ -55,6 +55,43 @@ public class Problem203 {
 
     }
 
+    /**
+     * 递归思想解决问题
+     * @param head
+     * @param val
+     * @return
+     */
+    public ListNode removeElementsInRecursive(ListNode head, int val){
+
+        if(head == null){
+            return null;
+        }
+
+        ListNode res = removeElementsInRecursive(head.next, val);
+        if(head.val == val){
+            head = res;
+        }else{
+            head.next = res;
+        }
+
+        return head;
+
+    }
+
+
+    public static void main(String[] args) {
+
+        int[] nums = new int[]{2,4,6,5,7,6};
+
+        ListNode listNode = new ListNode(nums);
+        System.out.println(listNode);
+
+//        ListNode res = new Problem203().removeElements(listNode, 2);
+        ListNode res = new Problem203().removeElementsInRecursive(listNode,6);
+        System.out.println(res);
+
+    }
+
 
 
 }
