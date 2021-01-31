@@ -2,6 +2,14 @@ package com.hins.base.datastruct.linkedList;
 
 /**
  * @Description: 单链表的基本实现
+ *
+ * 对于单链表来说，需要清晰的点:
+ * 1)初始化一个默认的链表时，链表中的头指针指向Null。
+ * 2)往链表头添加元素，实际上只需要构造Node对象，并且指向head引用，再把新增的节点设置为head头指针。
+ * 3)往指定的index中添加元素，cur指针只需要移动index-1次。
+ *
+ *
+ *
  * @Author:Wyman
  * @Date:2019/11/23
  */
@@ -103,7 +111,9 @@ public class LinkedList<E> {
     }
 
 
+    public static void main(String[] args) {
 
+    }
 
 
 

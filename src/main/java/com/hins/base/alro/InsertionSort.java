@@ -57,8 +57,8 @@ public class InsertionSort {
         Integer[] arr2 = SortTestHelper.copyArr(arr);
 
         //初步比较插入排序和选择排序算法性能
-        SortTestHelper.testSort("com.hins.algorithm.SelectionSort",arr);
-        SortTestHelper.testSort("com.hins.algorithm.InsertionSort",arr2);
+        SortTestHelper.testSort("com.hins.base.alro.SelectionSort",arr);
+        SortTestHelper.testSort("com.hins.base.alro.InsertionSort",arr2);
 
         //没有经过优化前，即使插入排序会减少循环的次数，但是由于交换次数增多，时间会比选择排序还要长！
 

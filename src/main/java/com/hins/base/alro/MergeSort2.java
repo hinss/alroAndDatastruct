@@ -84,8 +84,8 @@ public class MergeSort2 {
         Integer[] arr = SortTestHelper.generateRandomArray(N,0,N);
         Integer[] arr2 = SortTestHelper.copyArr(arr);
 
-        SortTestHelper.testSort("com.hins.algorithm.MergeSortBU",arr);
-        SortTestHelper.testSort("com.hins.algorithm.MergeSort2",arr2);
+        SortTestHelper.testSort("com.hins.base.alro.MergeSortBU",arr);
+        SortTestHelper.testSort("com.hins.base.alro.MergeSort2",arr2);
 
     }
 
