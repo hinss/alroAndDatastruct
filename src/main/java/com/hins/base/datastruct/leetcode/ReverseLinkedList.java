@@ -1,7 +1,5 @@
 package com.hins.base.datastruct.leetcode;
 
-import com.hins.base.datastruct.linkedList.MyLinkedList;
-
 /**
  * 反转链表:反转一个单链表。
  *

@@ -69,17 +69,15 @@ public class LinkedList<E> {
     /**
      * 往链表头添加元素
      */
-    public void addFirst(E e){
+    public void addFirst(E e) {
 
-        Node node = new Node(e);
-        node.next = head;
-        head = node;
-
+        // 这一步相当于前面3步合在一起。
+        head = new Node(e, head);
         size++;
-
     }
 
-    private void add(int index,E e){
+    // 在链表的index(0-based)位置添加新的元素e
+    private void add(int index,E e) {
 
         if(index < 0 || index > size)
             throw new IllegalArgumentException("Add failed. Illegal index.");
@@ -92,10 +90,6 @@ public class LinkedList<E> {
                 prev = prev.next;
             }
 
-//            Node node = new Node(e);
-//            node.next = prev.next;
-//            prev.next = node;
-
             prev.next = new Node(e, prev.next);
             size ++;
         }
@@ -107,17 +101,6 @@ public class LinkedList<E> {
     public void addLast(E e){
 
         add(size,e);
-
     }
-
-
-    public static void main(String[] args) {
-
-    }
-
-
-
-
-
 
 }
