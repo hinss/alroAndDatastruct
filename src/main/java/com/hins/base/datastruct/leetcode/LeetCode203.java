@@ -1,43 +1,35 @@
 package com.hins.base.datastruct.leetcode;
 
 /**
- * @Description: 链表 反转链表
- * @Author:Wyman
- * @Date: 2021-02-08
- */
+ * @author: hins
+ * @created: 2021-02-09 09:57
+ * @desc: 移除链表元素
+ **/
 public class LeetCode203 {
 
-    /**
-     * 双指针迭代法
-     */
-    public static ListNode reverseInTraverseWay(ListNode head) {
+    public static ListNode removeElements(ListNode head, int val) {
 
-        ListNode pre = null;
-        ListNode cur = head;
-        while(cur != null) {
-            ListNode next = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = next;
+        if (head == null) {
+            return null;
         }
 
-        return pre;
-    }
+        ListNode dummyHead = new ListNode(0);
+        ListNode cur = dummyHead;
+        cur.next = head;
 
-    /**
-     * 递归解法
-     */
-    public static ListNode recursionWay(ListNode head) {
+        while(head != null) {
 
-        if (head == null || head.next == null) {
-            return head;
+            if (head.val == val) {
+                cur.next = head.next;
+                head = head.next;
+            } else {
+                // just forward move two pointer...
+                head = head.next;
+                cur = cur.next;
+            }
         }
 
-        ListNode cur = recursionWay(head.next);
-        head.next.next = head;
-        head.next = null;
-
-        return cur;
+        return dummyHead.next;
     }
 
     static class ListNode {
@@ -50,13 +42,17 @@ public class LeetCode203 {
 
     public static void main(String[] args) {
 
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(3);
-        listNode.next.next.next = new ListNode(4);
+        ListNode listNode = new ListNode(4);
+        listNode.next = new ListNode(6);
+        listNode.next.next = new ListNode(5);
+        listNode.next.next.next = new ListNode(2);
+        listNode.next.next.next.next = new ListNode(6);
 
-        listNode = reverseInTraverseWay(listNode);
-        System.out.println(listNode);
+        listNode = removeElements(listNode, 6);
+
+        System.out.println("DEBUG");
+
     }
+
 
 }
