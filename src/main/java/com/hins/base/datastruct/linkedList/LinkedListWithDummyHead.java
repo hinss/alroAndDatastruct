@@ -22,6 +22,13 @@ public class LinkedListWithDummyHead<E> {
         public Node(E value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    '}';
+        }
     }
 
     private Node dummyHead;
@@ -40,6 +47,10 @@ public class LinkedListWithDummyHead<E> {
         return size;
     }
 
+    public void addFirst(E e) {
+        add(0, e);
+    }
+
     public void add(int index, E e) {
 
         if(index < 0 || index > size)
@@ -52,5 +63,60 @@ public class LinkedListWithDummyHead<E> {
 
         prev.next = new Node(e, prev.next);
         size++;
+    }
+
+
+    public E get(int index) {
+
+        if(index < 0 || index > size) {
+            throw new IllegalArgumentException("Add failed. Illegal index.");
+        }
+
+        Node cur = dummyHead.next;
+        for (int i = 0; i < index; i++){
+            cur = cur.next;
+        }
+        return cur.value;
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public void set(int index, E e) {
+
+        if(index < 0 || index > size) {
+            throw new IllegalArgumentException("Add failed. Illegal index.");
+        }
+
+        Node cur = dummyHead.next;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+
+        cur.value = e;
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+
+        for( Node cur = dummyHead.next; cur != null; cur = cur.next) {
+            sb.append(cur).append(" -> ");
+        }
+
+        sb.append("NULL");
+
+        return sb.toString();
+    }
+
+    public void remove(E e){
+
+
     }
 }
