@@ -1,5 +1,6 @@
 package com.hins.base;
 
+import com.hins.base.datastruct.linkedList.LinkedListStack;
 import com.hins.base.datastruct.linkedList.LinkedListWithDummyHead;
 
 /**
@@ -11,14 +12,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LinkedListWithDummyHead<Integer> linkedListWithDummyHead = new LinkedListWithDummyHead();
+        LinkedListStack<Integer> linkedListStack = new LinkedListStack<>();
+
         for (int i=0; i<5; i++) {
-            linkedListWithDummyHead.addFirst(i);
-            System.out.println(linkedListWithDummyHead);
+            linkedListStack.push(i);
+            System.out.println(linkedListStack);
         }
 
-        linkedListWithDummyHead.set(2, 888);
+        linkedListStack.pop();
 
-        System.out.println(linkedListWithDummyHead);
+        System.out.println(linkedListStack);
     }
 }

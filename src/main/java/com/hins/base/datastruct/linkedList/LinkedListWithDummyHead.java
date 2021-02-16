@@ -101,6 +101,28 @@ public class LinkedListWithDummyHead<E> {
         cur.value = e;
     }
 
+    public E remove(int index){
+
+        if(index < 0 || index > size) {
+            throw new IllegalArgumentException("Add failed. Illegal index.");
+        }
+
+        Node prev = dummyHead;
+        for (int i=0; i<index; i++) {
+            prev = prev.next;
+        }
+
+        Node cur = prev.next;
+        prev.next = cur.next;
+        cur.next = null;
+
+        return cur.value;
+    }
+
+    public E removeFirst() {
+        return remove(0);
+    }
+
     @Override
     public String toString() {
 
@@ -113,10 +135,5 @@ public class LinkedListWithDummyHead<E> {
         sb.append("NULL");
 
         return sb.toString();
-    }
-
-    public void remove(E e){
-
-
     }
 }
