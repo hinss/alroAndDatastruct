@@ -1,9 +1,13 @@
 package com.hins.base.alro;
 
-public class BubbleSort2 {
+/**
+ * 演示了冒泡排序的最优情况做法 (该版本是优化了外层循环)
+ * 只需要遍历一次n长度的数组，当数组是有序的时候，就不会发生swap就可以完成排序了。
+ */
+public class InhanceBubbleSort {
 
     // 我们的算法类不允许产生任何实例
-    private BubbleSort2(){}
+    private InhanceBubbleSort(){}
 
     public static void sort(Comparable[] arr){
 

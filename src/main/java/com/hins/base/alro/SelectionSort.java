@@ -1,5 +1,7 @@
 package com.hins.base.alro;
 
+import java.util.Arrays;
+
 /**
  * 选择排序
  * 算法时间复杂度:O(n^2)
@@ -14,17 +16,16 @@ public class SelectionSort {
     public static void sort(Comparable[] arr){
 
         int n = arr.length;
-        for( int i = 0 ; i < n ; i ++ ){
-            // 寻找[i, n)区间里的最小值的索引
+        // 外层循环次数
+        for(int i=0; i<n; i++) {
             int minIndex = i;
-            for( int j = i + 1 ; j < n ; j ++ ){
-                // 使用compareTo方法比较两个Comparable对象的大小
-                if( arr[j].compareTo( arr[minIndex] ) < 0 ) {
+            // 内层循环遍历找出最小值的index
+            for(int j=i+1; j<n; j++) {
+                if(arr[j].compareTo(arr[minIndex]) < 0){
                     minIndex = j;
                 }
             }
-
-            swap( arr , i , minIndex);
+            swap(arr,i,minIndex);
         }
     }
 
@@ -76,13 +77,21 @@ public class SelectionSort {
 
 
         // 测试排序算法辅助函数
-        int N = 20000;
-        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-//        SortTestHelper.testSort("com.hins.algorithm.SelectionSort", arr);
+//        int N = 200000;
+//        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
+//        SortTestHelper.testSort("com.hins.base.alro.SelectionSort", arr);
+//        SortTestHelper.testSort("com.hins.base.alro.InhanceBubbleSort", arr);
+//        assert false;
+//
+//        System.out.println( "过了assert断言");
 
-        assert false;
+//        Integer[] arr1 = new Integer[]{1,2,3,4};
+//        Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
+//        arr1[0] = 8;
+//        System.out.println(arr1[0]);
+//        System.out.println(arr2[0]);
 
-        System.out.println( "过了assert断言");
+
 
     }
 }

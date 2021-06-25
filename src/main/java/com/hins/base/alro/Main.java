@@ -17,11 +17,12 @@ public class Main {
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("com.hins.algorithm.BubbleSort", arr4);
-        SortTestHelper.testSort("com.hins.algorithm.BubbleSort2", arr3);
-        SortTestHelper.testSort("com.hins.algorithm.SelectionSort", arr1);
-        SortTestHelper.testSort("com.hins.algorithm.InsertionSort", arr2);
-        //SortTestHelper.testSort("bobo.algo.BubbleSort2", arr4);
+        SortTestHelper.testSort("com.hins.base.alro.OriginBubbleSort", arr1);
+        SortTestHelper.testSort("com.hins.base.alro.InhanceBubbleSort", arr2);
+        SortTestHelper.testSort("com.hins.base.alro.BubbleSort", arr4);
+        SortTestHelper.testSort("com.hins.base.alro.SelectionSort", arr3);
+//        SortTestHelper.testSort("com.hins.algorithm.InsertionSort", arr2);
+        //SortTestHelper.testSort("bobo.algo.InhanceBubbleSort", arr4);
 
         System.out.println();
 
@@ -38,7 +39,7 @@ public class Main {
 //        SortTestHelper.testSort("bobo.algo.SelectionSort", arr1);
 //        SortTestHelper.testSort("bobo.algo.InsertionSort", arr2);
 //        SortTestHelper.testSort("bobo.algo.BubbleSort", arr3);
-//        SortTestHelper.testSort("bobo.algo.BubbleSort2", arr4);
+//        SortTestHelper.testSort("bobo.algo.InhanceBubbleSort", arr4);
 //
 //        System.out.println();
 //
@@ -58,7 +59,7 @@ public class Main {
 //        //SortTestHelper.testSort("bobo.algo.SelectionSort", arr1);
 //        SortTestHelper.testSort("bobo.algo.InsertionSort", arr2);
 //        SortTestHelper.testSort("bobo.algo.BubbleSort", arr3);
-//        SortTestHelper.testSort("bobo.algo.BubbleSort2", arr4);
+//        SortTestHelper.testSort("bobo.algo.InhanceBubbleSort", arr4);
 
         return;
     }
