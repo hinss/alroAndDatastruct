@@ -7,7 +7,7 @@ public class Main {
     // 比较SelectionSort, InsertionSort和BubbleSort三种排序算法的性能效率
     public static void main(String[] args) {
 
-        int N = 20000;
+        int N = 30000;
 
         // 测试1 一般测试
         System.out.println("Test for random array, size = " + N + " , random range [0, " + N + "]");
@@ -16,15 +16,20 @@ public class Main {
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
         Integer[] arr4 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr5 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr6 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr7 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("com.hins.base.alro.OriginBubbleSort", arr1);
-        SortTestHelper.testSort("com.hins.base.alro.InhanceBubbleSort", arr2);
-        SortTestHelper.testSort("com.hins.base.alro.BubbleSort", arr4);
-        SortTestHelper.testSort("com.hins.base.alro.SelectionSort", arr3);
-//        SortTestHelper.testSort("com.hins.algorithm.InsertionSort", arr2);
-        //SortTestHelper.testSort("bobo.algo.InhanceBubbleSort", arr4);
+//        SortTestHelper.testSort("com.hins.base.alro.OriginBubbleSort", arr1);
+//        SortTestHelper.testSort("com.hins.base.alro.InhanceBubbleSort", arr2);
+        SortTestHelper.testSort("com.hins.base.alro.BubbleSort", arr1);
+        SortTestHelper.testSort("com.hins.base.alro.SelectionSort", arr2);
+//        SortTestHelper.testSort("com.hins.base.alro.BasicInsertionSort", arr5);
+        SortTestHelper.testSort("com.hins.base.alro.InsertionSort", arr3);
+        SortTestHelper.testSort("com.hins.base.alro.ShellSort", arr4);
+        SortTestHelper.testSort("com.hins.base.alro.BasicMergeSort", arr5);
 
-        System.out.println();
+        System.out.println("Finish...");
 
 
 //        // 测试2 测试近乎有序的数组

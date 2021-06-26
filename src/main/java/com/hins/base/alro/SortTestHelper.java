@@ -72,12 +72,18 @@ public class SortTestHelper {
             sortMethod.invoke(null,params);
             long endTime = System.currentTimeMillis();
 
-            assert isSorted( arr );
-
-            System.out.println( sortClass.getSimpleName()+ " : " + (endTime-startTime) + "ms" );
+            System.out.print( sortClass.getSimpleName()+ " : " + (endTime-startTime) + "ms  " );
+            System.out.println(isSorted(arr));
         }
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+
+        Integer[] arr = SortTestHelper.generateRandomArray(7,0,100);
+
+        SortTestHelper.printArray(arr);
     }
 }

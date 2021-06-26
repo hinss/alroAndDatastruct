@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Author:Wyman
  * @Date:2019
  */
-public class MergeSort2 {
+public class BasicMergeSort {
 
     public static void sort(Comparable[] arr){
 
@@ -19,11 +19,10 @@ public class MergeSort2 {
     private static void sort(Comparable[] arr, int l, int r){
 
         //递归终止条件，到最下层每个都是一个元素独立
-        if(r - l <= 15){
+        if(r - l <= 0){
             //调用插入算法 insertionSort(arr,l,r);
             return ;
         }
-
 
         int mid = (l + r) / 2;
 
@@ -32,15 +31,18 @@ public class MergeSort2 {
         //对右边的元素进行排序
         sort(arr,mid+1,r);
 
-        if(arr[mid].compareTo(arr[mid + 1]) < 0) {
-            //归并
+        // 这个判断用于排除掉一部分已经有序，无须归并的场景
+        if(arr[mid].compareTo(arr[mid + 1]) > 0) {
+
+            //归并过程,包含着赋值操作
             merge(arr, l, mid, r);
+
         }
 
     }
 
     //归并操作
-    private static void merge(Comparable[] arr,int l,int mid,int r){
+    protected static void merge(Comparable[] arr,int l,int mid,int r){
 
         //通过复制数组来替换原有数组保持顺序
         Comparable[] aux = Arrays.copyOfRange(arr, l, r+1);
@@ -51,8 +53,8 @@ public class MergeSort2 {
         //k是用于记录原数组的位置的下标，用于替换
         for(int k = l; k <= r; k++){
 
-            //判断左边是否排好序
             if(i > mid){
+                //判断左边是否排好序
                 arr[k] = aux[j-l];
                 j++;
             }else if(j > r){
@@ -71,21 +73,23 @@ public class MergeSort2 {
 
         }
 
-
-
-
     }
 
 
     public static void main(String[] args) {
 
-        int N = 20000;
+//        int N = 20000;
+        Integer[] arr = new Integer[]{8,9,1,7,2,3,5,4,6,0};
+        sort(arr);
+        SortTestHelper.printArray(arr);
+//        Integer[] arr = SortTestHelper.generateRandomArray(N,0,N);
+//        Integer[] arr2 = SortTestHelper.copyArr(arr);
 
-        Integer[] arr = SortTestHelper.generateRandomArray(N,0,N);
-        Integer[] arr2 = SortTestHelper.copyArr(arr);
+//        SortTestHelper.testSort("com.hins.base.alro.MergeSortBU",arr);
 
-        SortTestHelper.testSort("com.hins.base.alro.MergeSortBU",arr);
-        SortTestHelper.testSort("com.hins.base.alro.MergeSort2",arr2);
+//        Integer[] arr = new Integer[]{9,8};
+//        merge(arr,0,0,1);
+//        System.out.println("DEBUG");
 
     }
 
