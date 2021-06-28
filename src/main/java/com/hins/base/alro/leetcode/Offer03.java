@@ -43,7 +43,7 @@ public class Offer03 {
 
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
+        int[] nums = new int[]{1, 2, 3, 4, 5, 0};
         int res = new Offer03().findRepeatNumber(nums);
 
         Assert.that(res == 2 || res == 3, "测试不通过");
